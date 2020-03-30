@@ -14,7 +14,7 @@ class App extends React.Component {
 		isSearched: false
 	};
 	apiSearch = async keyword => {
-		this.setState({ isSearched: true });
+		this.setState({ isSearched: true, isDataLoaded: false });
 		const res = await unsplash.get('/search/photos', {
 			params: { query: keyword, per_page: 20, page: this.state.page }
 		});
